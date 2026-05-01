@@ -1,12 +1,13 @@
 import "./GameScreen.css"
 import MainLayout from "../layout/MainLayout.jsx";
+import GameArea from "../components/GameArea.jsx";
 
 function GameScreen(){
     return(
         <div>
-            <MainLayout></MainLayout>
-
-
+            <MainLayout>
+                <GameArea></GameArea>
+            </MainLayout>
         </div>
     );
 }

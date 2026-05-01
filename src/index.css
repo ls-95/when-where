@@ -9,6 +9,8 @@
  /*colors*/
  --color-bg:#0B1633;
  --color-bg-dark:#070B1A;
+ --color-txt-lighter: #94A3B8;
+ --color-txt:#93C5FD;
 
  /*typography*/
  --font-banner:"Space Mono", monospace;

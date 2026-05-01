@@ -2,48 +2,20 @@
 .header{
     display: flex;
     flex-direction: column;
-   
+    width: 100%;
 
 }
 
 .logo-container{
     display:flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .logo{
-    max-width: 300px;
-}
-.score-round-banner{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap:10px;
-   font-family: var(--font-banner);
+  margin: 20px;
+  height: 10rem;
+  width:auto;
 
 }
 
-.score-container,
-.round-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 80px;
-  gap: 15px;
-}
-
-.score-txt,
-.round-txt {
-  font-size: 20px;
-  letter-spacing: 1.5px;
-  color: #94A3B8;
-}
-
-.score,
-.round {
-  font-size: 20px;
-  font-weight:
-  color: #93C5FD;
-}

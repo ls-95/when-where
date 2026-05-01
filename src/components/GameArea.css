@@ -1,0 +1,15 @@
+
+.game-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) ;
+  gap:30px;
+  height: 70vh;
+  width: 100%
+  
+}
+
+.container{
+  background: #1e1e1e;
+  border:2px solid yellow;
+  border-radius: 12px;
+}
