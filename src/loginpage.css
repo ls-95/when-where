@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.login-page {
+    position:relative;
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 24px;
+    overflow: hidden;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-logo-image {
+    position: absolute;
+    top: 45px;
+    left: 45px;
+    z-index: 2;
+    width: 200px;
+    height: auto;
+}
+
+.login-background-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 7, 28, 0.35);
+    pointer-events: none;
+}
+
+.login-title {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 520px) {
+    .login-logo-image {
+        width: 115px;
+        top: 18px;
+        left: 18px;
+    }
+
+    .login-card {
+        margin-top: 70px;
+    }
+}
