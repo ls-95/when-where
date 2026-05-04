@@ -7,10 +7,6 @@ function Header(){
             <div className="logo-container">
                 <div><img src={Logo} alt="logo white"className="logo" /></div>
             </div>
-         
-           
-         
-            
 
         </div>
     );

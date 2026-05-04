@@ -86,14 +86,10 @@
     0 0 12px 4px rgba(43, 209, 217, 0.5);
 }
 
-
 .year-row:active {
   transform: translateY(2px);
   box-shadow: 0 2px 0px #012e6a;
 }
-
-
-
 
 .guess-btn{
   margin-top: 20px;
