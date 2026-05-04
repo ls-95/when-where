@@ -1,6 +1,6 @@
-import "./loginpage.css";
-import backgroundImage from "./assets/when-where-background-2.png";
-import logoImage from "./assets/when-where-logo.png";
+import "./Loginpage.css";
+import backgroundImage from "../assets/when-where-background-2.png";
+import logoImage from "../assets/when-where-logo.png";
 
 function LoginPage() {
     return (
