@@ -1,0 +1,21 @@
+
+.header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.logo-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+  margin: 20px;
+  height: 10rem;
+  width:auto;
+
+}
+

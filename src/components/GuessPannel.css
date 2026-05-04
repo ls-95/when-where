@@ -1,0 +1,143 @@
+.guess-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  font-family: var(--font-banner);
+  padding: 12px;
+  height: 100%;
+  font-size: 20px;
+  background: linear-gradient(145deg, #0f1d44, #070f26);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.container-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.pin-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-family: var(--font-banner);
+  font-weight: 700;
+  color:var(--color-bg);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f2f6ff 50%,
+    hsl(223, 100%, 94%) 100%
+  );
+  border-top: 3px solid #ffffff;
+  box-shadow: 0 4px 0px #9aa7c7;
+  transition: all 0.15s ease;
+}
+
+.pin-row:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 0px #7f8db0,
+    0 0 10px rgba(180, 200, 255, 0.4);
+}
+
+.pin-row:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0px #6c7896;
+}
+
+.year-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding:12px 14px;
+  border-radius:14px;
+  text-align: center;
+  font-family: var(--font-banner);
+  font-weight: 700;
+  color: var(--color-bg);
+  background: linear-gradient(
+    180deg,
+    #3be0d3 0%,
+    #2bd1d9 49%,
+    #11c1d3 51%,
+    #1896cf 100%
+  );
+  border-top: 3px solid #9ff0eb;
+  box-shadow: 0 4px 0px #023f87;
+  transition: all 0.15s ease;
+}
+
+.year-row input {
+  width: 100%;
+  accent-color: #ffffff;
+  cursor: pointer;
+}
+
+.year-row:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 0px #1254a0,
+    0 0 12px 4px rgba(43, 209, 217, 0.5);
+}
+
+.year-row:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0px #012e6a;
+}
+
+.guess-btn{
+  margin-top: 20px;
+  width: 100%;
+  font-size: 1.6em;
+  font-weight: 700;
+  padding: 0.6em;
+  border-radius: 1em;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-banner);
+  color: var(--color-bg);
+  background: linear-gradient(
+    180deg,
+    #fde439 0%,
+    #fdcd3b 49%,
+    #f9b118 51%,
+    #fa9016 100%);
+
+  border-top: 3px solid #f6f08f;
+  box-shadow: 0 4px 0px #ce4b06;
+}
+
+.guess-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(
+    180deg,
+    #fef07a 0%,
+    #fddb6e 49%,
+    #fcc545 51%,
+    #fbaa52 100%
+  );
+  border-top: 3px solid #faf5b0;
+  box-shadow:
+    0 4px 0px #d96318,
+    0 0 12px 4px rgba(253, 185, 30, 0.55);
+}
+
+.guess-btn:active {
+  background: linear-gradient(
+    180deg,
+    #f5c800 0%,
+    #e8ae10 49%,
+    #d98d00 51%,
+    #c86800 100%
+  );
+
+  border-top: 3px solid #e8d84a;
+  box-shadow: 0 4px 0px #a33800;
+  transform: translateY(2px);
+}
