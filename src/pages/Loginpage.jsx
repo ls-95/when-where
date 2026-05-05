@@ -9,51 +9,55 @@ function LoginPage() {
             style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="login-background-overlay"></div>
 
-            <img className="login-logo-image" src={logoImage} alt="When & Where logo"/>
+            <div className="login-content">
+                <img className="login-logo-image" 
+                    src={logoImage} 
+                    alt="When & Where logo"/>
 
 
-            <section className="login-card">
-                <h2 className="login-title">Log in</h2>
-                <p className="login-subtitle">Continue with logging in</p>
+                <section className="login-card">
+                    <h2 className="login-title">Welcome</h2>
+                    <p className="login-subtitle">Sign in to continue your adventure</p>
 
-                <form className="login-form">
-                    <div className="login-form-group">
-                        <label htmlFor="username">Email or username</label>
-                        <input
-                            id="username" 
-                            type="text"
-                            placeholder="Enter email or username" 
-                        />
-                    </div>
+                    <form className="login-form">
+                        <div className="login-form-group">
+                            <label htmlFor="username">Email or username</label>
+                            <input
+                                id="username" 
+                                type="text"
+                                placeholder="Enter email or username" 
+                            />
+                        </div>
 
-                    <div className="login-form-group">
-                        <label htmlFor="password">Password</label>
-                        <input 
-                            id="password"
-                            type="text"
-                            placeholder="Enter password" 
-                        />
-                    </div>
-                    
-                    <div className="login-options">
-                        <label className="login-remember">
-                            <input type="checkbox" />
-                            Remember me
-                        </label>
+                        <div className="login-form-group">
+                            <label htmlFor="password">Password</label>
+                            <input 
+                                id="password"
+                                type="text"
+                                placeholder="Enter password" 
+                            />
+                        </div>
+                        
+                        <div className="login-options">
+                            <label className="login-remember">
+                                <input type="checkbox" />
+                                Remember me
+                            </label>
 
-                        <a href="#">Forgot password?</a>
-                    </div>
+                            <a href="#">Forgot password?</a>
+                        </div>
 
-                    <button className="login-button" type="submit">
-                        Login
-                    </button>
+                        <button className="login-button" type="submit">
+                            Login
+                        </button>
 
-                    <p className="login-register-text">
-                        Don't have an account? <a href="#">Create new account</a>
-                    </p>
-                </form>
+                        <p className="login-register-text">
+                            Don't have an account? <a href="#">Create new account</a>
+                        </p>
+                    </form>
 
-            </section>
+                </section>
+            </div>
         </main>
     )
 }
