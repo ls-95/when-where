@@ -5,8 +5,15 @@ import { pics } from "./ImageList.jsx";
 import { useState } from "react";
 
 function GameArea() {
+  const [index, setIndex] = useState(0);
   const handleGuess = () => {
-    console.log("Hello", pics[0].city);
+    if (index <= 3) {
+      if (index < myArray.length - 1) {
+        setIndex(index + 1);
+      }
+    } else {
+      alert("This is the end");
+    }
   };
 
   const shuffleArray = (array) => {
@@ -15,7 +22,6 @@ function GameArea() {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    console.log(shuffled);
     return shuffled;
   };
   const [myArray] = useState(() => shuffleArray(pics));
@@ -24,7 +30,7 @@ function GameArea() {
     <div className="game-area">
       <div className="container">
         <div className="image">
-          <Image images={myArray} />
+          <Image images={myArray} index={index} />
         </div>
       </div>
 
