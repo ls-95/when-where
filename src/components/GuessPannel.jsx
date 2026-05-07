@@ -6,8 +6,9 @@ function GuessPannel({ handleGuess, handleNext, name, newArray }) {
       {name === "Next" && (
         <div className="results">
           <p>
-            Location: {newArray.address && `${newArray.address},`}{" "}
-            {newArray.city}, {newArray.country}
+            Location: {newArray.name ? `${newArray.name}, ` : ""}
+            {newArray.address ? `${newArray.address},` : ""} {newArray.city},{" "}
+            {newArray.country}
           </p>
         </div>
       )}
