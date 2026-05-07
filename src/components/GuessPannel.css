@@ -9,7 +9,7 @@
   font-size: 20px;
   background: linear-gradient(145deg, #0f1d44, #070f26);
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .container-top {
@@ -17,7 +17,6 @@
   flex-direction: column;
   gap: 20px;
 }
-
 
 .pin-row {
   display: flex;
@@ -27,7 +26,7 @@
   border-radius: 14px;
   font-family: var(--font-banner);
   font-weight: 700;
-  color:var(--color-bg);
+  color: var(--color-bg);
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -55,8 +54,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding:12px 14px;
-  border-radius:14px;
+  padding: 12px 14px;
+  border-radius: 14px;
   text-align: center;
   font-family: var(--font-banner);
   font-weight: 700;
@@ -91,7 +90,7 @@
   box-shadow: 0 2px 0px #012e6a;
 }
 
-.guess-btn{
+.guess-btn {
   margin-top: 20px;
   width: 100%;
   font-size: 1.6em;
@@ -107,7 +106,8 @@
     #fde439 0%,
     #fdcd3b 49%,
     #f9b118 51%,
-    #fa9016 100%);
+    #fa9016 100%
+  );
 
   border-top: 3px solid #f6f08f;
   box-shadow: 0 4px 0px #ce4b06;
@@ -140,4 +140,8 @@
   border-top: 3px solid #e8d84a;
   box-shadow: 0 4px 0px #a33800;
   transform: translateY(2px);
+}
+
+.results {
+  color: #fff;
 }

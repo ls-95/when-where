@@ -10,6 +10,20 @@ import Chile from "../images/pl-de-armas-santiago-chile-1983.webp";
 import Italy from "../images/Ponte-di-Rialto-venice-2025.webp";
 import Japan from "../images/Shibuya-Crossing-Tokyo-1975.jpg";
 import NewYork from "../images/skateboard-guy-in-central-park-1965.webp";
+import NorthCarolina from "../images/1941-north-carolina-fayetteville-market-house.jpg";
+import Newport from "../images/newport-power-station-australia-1949.jpg";
+import Southampton from "../images/Ocean-Dock-101-Herbert-Walker-Avenue-Southampton-1912.jpg";
+import Syria from "../images/Talbiseh-Syria-1940.jpg";
+import Iran from "../images/Plasco-Building-Jomhouri-Avenue-Tehran-Iran-1970.png";
+import Ghana from "../images/Kejetia-Market-Kejetia Road-Kumasi-Ghana-2009.png";
+import Ethiopia from "../images/2004-Asheten-hotel-Lalibela-Geshena-Road-Ethiopia.png";
+import Senegal from "../images/Chambre-de-Commerce-1-Place-de-L'Indépendance-Dakar-Senegal-2008.png";
+import HongKong from "../images/10-Prat-Avenue-Tsim-Sha-Tsui-Hong-Kong-1982.jpg";
+import Göteborg from "../images/Gustaf-Adolfs-Torg-Göteborg-Sweden-1900.jpg";
+import Athens from "../images/Parthenon-Acropolis-Hill-Athens-Greece-1907.webp";
+import Romania from "../images/1939-Calea-Victoriei-45-Bucharest-Romania.png";
+import SouthAfrica from "../images/1-Darling-Street-Cape-Town-South-Africa-1958.png";
+import Russia from "../images/The-Holy-Trinity-St-Sergius-Larva-Sergiyev-Posad-Russia-1939.png";
 
 export const pics = [
   {
@@ -122,5 +136,132 @@ export const pics = [
     image: NewYork,
     lat: "40.78254699707031",
     long: "-73.96553039550781",
+  },
+  {
+    city: "Fayetteville, North Carolina",
+    country: "United States of America",
+    address: "Market Square",
+    year: "1941",
+    image: NorthCarolina,
+    lat: "35.0524906",
+    long: "-78.8785167",
+  },
+  {
+    city: "Newport",
+    country: "Australia",
+    address: "Newport VIC",
+    year: "1949",
+    image: Newport,
+    lat: "-37.841433",
+    long: "144.8949937",
+  },
+  {
+    city: "Southampton",
+    country: "United Kingdom",
+    address: "101 Herbert Walker Avenue",
+    year: "1912",
+    image: Southampton,
+    lat: "50.8995475769043",
+    long: "-1.411460041999817",
+  },
+  {
+    city: "Tehran",
+    country: "Iran",
+    address: "Plasco Building, Jomhouri Avenue",
+    year: "1970",
+    image: Iran,
+    lat: "35.69554029091398",
+    long: "51.40421969028503",
+  },
+  {
+    city: "Talbiseh",
+    country: "Syria",
+    address: "Beehive Houses",
+    year: "1940",
+    image: Syria,
+    lat: "34.84063",
+    long: "36.73093",
+  },
+  {
+    city: "Kumasi",
+    country: "Ghana",
+    address: "Kejetia Road",
+    year: "2009",
+    image: Ghana,
+    lat: "6.6958325",
+    long: "-1.6210457",
+  },
+  {
+    city: "Lalibela",
+    country: "Ethiopia",
+    address: "Geshena Road",
+    year: "2004",
+    image: Ethiopia,
+    lat: "12.033788131171095",
+    long: "39.049726685837484",
+  },
+  {
+    city: "Dakar",
+    country: "Senegal",
+    address: "1 Place de l'Independance",
+    year: "2008",
+    image: Senegal,
+    lat: "14.6703922",
+    long: "-17.4327711",
+  },
+  {
+    city: "Tsim Sha Tsui",
+    country: "Hong Kong",
+    address: "10 Prat Avenue",
+    year: "1982",
+    image: HongKong,
+    lat: "22.298550479653134",
+    long: "114.1745206687172",
+  },
+  {
+    city: "Gothenberg",
+    country: "Sweden",
+    address: "Gustaf Adolfs torg",
+    year: "1900",
+    image: Göteborg,
+    lat: "57.7071709",
+    long: "11.9667895",
+  },
+  {
+    city: "Athens",
+    country: "Greece",
+    name: "Parthenon",
+    address: "Acropolis Hill",
+    year: "1907",
+    image: Athens,
+    lat: "37.9715034",
+    long: "23.7266177",
+  },
+  {
+    city: "Bucharest",
+    country: "Romania",
+    address: "Calea Victoriei 45",
+    year: "1939",
+    image: Romania,
+    lat: "44.4380301",
+    long: "26.0972228",
+  },
+  {
+    city: "Cape Town",
+    country: "South Africa",
+    address: "1 Cape Town",
+    year: "1958",
+    image: SouthAfrica,
+    lat: "-33.92350593300324",
+    long: "18.42177445362013",
+  },
+  {
+    city: "Sergiyev Posad",
+    country: "Russia",
+    name: "The Holy Trinity St. Sergius Larva",
+    year: "1939",
+    image: Russia,
+    lat: "56.311752",
+    long: "38.1362963",
   },
 ];

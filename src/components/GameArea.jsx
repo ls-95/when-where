@@ -6,7 +6,12 @@ import { useState } from "react";
 
 function GameArea() {
   const [index, setIndex] = useState(0);
+  const [name, setName] = useState("Guess");
   const handleGuess = () => {
+    setName("Next");
+  };
+
+  const handleNext = () => {
     if (index <= 3) {
       if (index < myArray.length - 1) {
         setIndex(index + 1);
@@ -14,6 +19,7 @@ function GameArea() {
     } else {
       alert("This is the end");
     }
+    setName("Guess");
   };
 
   const shuffleArray = (array) => {
@@ -37,7 +43,12 @@ function GameArea() {
       <div className="container right-column">
         <div className="map">Map</div>
         <div className="guess-panel">
-          <GuessPannel onclick={handleGuess} />
+          <GuessPannel
+            handleGuess={handleGuess}
+            handleNext={handleNext}
+            name={name}
+            newArray={myArray[index]}
+          />
         </div>
       </div>
     </div>
