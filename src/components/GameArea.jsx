@@ -4,8 +4,7 @@ import Image from "./Images.jsx";
 import { pics } from "./ImageList.jsx";
 import { useState } from "react";
 
-function GameArea() {
-  const [index, setIndex] = useState(0);
+function GameArea({ index, setIndex }) {
   const [name, setName] = useState("Guess");
   const handleGuess = () => {
     setName("Next");
