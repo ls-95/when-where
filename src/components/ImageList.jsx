@@ -176,7 +176,7 @@ export const pics = [
   {
     city: "Talbiseh",
     country: "Syria",
-    address: "Beehive Houses",
+    name: "Beehive Houses",
     year: "1940",
     image: Syria,
     lat: "34.84063",
@@ -249,7 +249,7 @@ export const pics = [
   {
     city: "Cape Town",
     country: "South Africa",
-    address: "1 Cape Town",
+    address: "1 Darling Street",
     year: "1958",
     image: SouthAfrica,
     lat: "-33.92350593300324",

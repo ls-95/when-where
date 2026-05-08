@@ -10,6 +10,7 @@ function GuessPannel({ handleGuess, handleNext, name, newArray }) {
             {newArray.address ? `${newArray.address},` : ""} {newArray.city},{" "}
             {newArray.country}
           </p>
+          <p>Year: {newArray.year}</p>
         </div>
       )}
       <div className="container-top">
