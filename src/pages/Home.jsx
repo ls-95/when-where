@@ -1,8 +1,10 @@
 import "./Home.css";
 import Logo from "../assets/when-where-logo.png";
 import Background from "../assets/when-where-background-2.png";
+import { useNavigate } from "react-router";
 
 function Home() {
+  const navigate = useNavigate();
   const handleEmail = () => {
     const promptInput = prompt(`What would you like to contact us about?`);
     if (promptInput !== "") {
@@ -29,8 +31,12 @@ function Home() {
       <div className="main-container">
         <img src={Logo} alt="When & Where logo" className="logo" />
         <div className="btn-container">
-          <button className="btn-play">Play</button>
-          <button className="btn-exit">Exit</button>
+          <button className="btn-play" onClick={() => navigate("/game")}>
+            Play
+          </button>
+          <button className="btn-exit" onClick={() => navigate("/login")}>
+            Exit
+          </button>
         </div>
       </div>
       <div className="footer-container">
