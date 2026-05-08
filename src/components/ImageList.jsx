@@ -9,7 +9,7 @@ import Brazil from "../images/Parque-Nacional-da-Tijuca-Alto-da-Boa-Vista-Rio-de
 import Chile from "../images/pl-de-armas-santiago-chile-1983.webp";
 import Italy from "../images/Ponte-di-Rialto-venice-2025.webp";
 import Japan from "../images/Shibuya-Crossing-Tokyo-1975.jpg";
-import NewYork from "../images/skateboard-guy-in-central-park-1965.webp";
+import NewYork from "../images/skateboard-guy-in-central-park-1965.jpg";
 import NorthCarolina from "../images/1941-north-carolina-fayetteville-market-house.jpg";
 import Newport from "../images/newport-power-station-australia-1949.jpg";
 import Southampton from "../images/Ocean-Dock-101-Herbert-Walker-Avenue-Southampton-1912.jpg";
@@ -20,7 +20,7 @@ import Ethiopia from "../images/2004-Asheten-hotel-Lalibela-Geshena-Road-Ethiopi
 import Senegal from "../images/Chambre-de-Commerce-1-Place-de-L'Indépendance-Dakar-Senegal-2008.png";
 import HongKong from "../images/10-Prat-Avenue-Tsim-Sha-Tsui-Hong-Kong-1982.jpg";
 import Göteborg from "../images/Gustaf-Adolfs-Torg-Göteborg-Sweden-1900.jpg";
-import Athens from "../images/Parthenon-Acropolis-Hill-Athens-Greece-1907.webp";
+import Athens from "../images/Parthenon-Acropolis-Hill-Athens-Greece-1907.jpg";
 import Romania from "../images/1939-Calea-Victoriei-45-Bucharest-Romania.png";
 import SouthAfrica from "../images/1-Darling-Street-Cape-Town-South-Africa-1958.png";
 import Russia from "../images/The-Holy-Trinity-St-Sergius-Larva-Sergiyev-Posad-Russia-1939.png";
