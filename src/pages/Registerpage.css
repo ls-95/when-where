@@ -239,7 +239,6 @@ body {
     border-radius: 6px;
 }
 
-
 @media (max-width: 520px) {
     .login-logo-image {
         width: 115px;
