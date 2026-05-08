@@ -1,24 +1,22 @@
-import { useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import LoginPage from "./pages/Loginpage";
+import RegisterPage from "./pages/Registerpage";
 import Home from "./pages/Home";
 import GameScreen from "./pages/GameScreen";
 
-import Navbar from "./components/Navbar";
-
 function App() {
-  const [currentPage, setCurrentPage] = useState("LoginPage");
-
   return (
-    <>
-      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-
-      {currentPage === "LoginPage" && <LoginPage/>}
-      {currentPage === "Home" && <Home/>}
-      {currentPage === "GameScreen" && <GameScreen/>}
-
-    </>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/game" element={<GameScreen />} />
+        </Routes>
+    </BrowserRouter>
   );
 }
 

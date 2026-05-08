@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "./Loginpage.css";
 import backgroundImage from "../assets/when-where-background-2.png";
 import logoImage from "../assets/when-where-logo.png";
 
-function LoginPage() {
+function RegisterPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -14,15 +13,17 @@ function LoginPage() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const savedUsername = localStorage.getItem("username");
-        const savedPassword = localStorage.getItem("password");
+        const trimmedUsername = username.trim();
 
-        if (username === savedUsername && password === savedPassword) {
-            localStorage.setItem("activeUsername", username);
-            navigate("/home");
-        }   else {
-            alert("Wrong username or password");
+        if (!trimmedUsername || !password) {
+            alert("Please enter username and password");
+            return;
         }
+
+        localStorage.setItem("username", trimmedUsername);
+        localStorage.setItem("password", password);
+
+        navigate("/login");
     };
 
     return (
@@ -38,54 +39,51 @@ function LoginPage() {
 
 
                 <section className="login-card">
-                    <h2 className="login-title">Welcome</h2>
-                    <p className="login-subtitle">Sign in to continue your adventure</p>
+                    <h2 className="login-title">Create account</h2>
+                    <p className="login-subtitle">Register account to start playing</p>
 
                     <form className="login-form" onSubmit={handleSubmit}>
                         <div className="login-form-group">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="register-username">Username</label>
                             <input
-                                id="username" 
+                                id="register-username" 
                                 type="text"
-                                placeholder="Enter username"
+                                placeholder="Enter username" 
                                 value={username}
                                 onChange={(event) => setUsername(event.target.value)}
                             />
                         </div>
 
                         <div className="login-form-group">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="register-password">Password</label>
                             <input 
-                                id="password"
+                                id="register-password"
                                 type="password"
                                 placeholder="Enter password"
                                 value={password}
                                 onChange={(event) => setPassword(event.target.value)}
                             />
                         </div>
-                        
-                        
 
                         <button className="login-button" type="submit">
-                            Sign in
+                            Register
                         </button>
 
                         <p className="login-register-text">
-                            Don't have an account? 
+                            Already have an account?{" "}
                             <button
                                 className="login-link-button"
                                 type="button"
-                                onClick={() => navigate("/register")}
+                                onClick={() => navigate("/login")}
                             >
-                                Create new account
+                                Log in
                             </button>
                         </p>
                     </form>
-
                 </section>
             </div>
         </main>
-    )
+    );
 }
 
-export default LoginPage;
+export default RegisterPage;
