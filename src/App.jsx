@@ -5,7 +5,7 @@ import LoginPage from "./pages/Loginpage";
 import RegisterPage from "./pages/Registerpage";
 import Home from "./pages/Home";
 import GameScreen from "./pages/GameScreen";
-import FinalScore from "./pages/FinaleScore";
+import FinalScore from "./pages/FinalScore";
 
 function App() {
   return (
