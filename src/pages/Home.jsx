@@ -29,7 +29,7 @@ function Home() {
       style={{ backgroundImage: `url(${Background})` }}
     >
       <div className="main-container">
-        <img src={Logo} alt="When & Where logo" className="logo" />
+        <img src={Logo} alt="When & Where logo" className="logo-home" />
         <div className="btn-container">
           <button className="btn-play" onClick={() => navigate("/game")}>
             Play
