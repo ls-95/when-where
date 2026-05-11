@@ -35,7 +35,7 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     const yearDifference = Math.abs(correctYear - guessedYear);
 
     return Math.max(0, 100 - yearDifference * 5);
-  }
+  };
 
   const handleGuess = () => {
     const pointsFromYear = calculateYearScore();
@@ -43,14 +43,12 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     setYearScore(pointsFromYear);
     setLocationScore(0);
     setTotalScore((previousScore) => previousScore + pointsFromYear);
-    
+
     if (index <= 3) {
       setName("Next");
     } else {
       setName("Results");
     }
-  };
-
   };
 
   const handleNext = () => {
@@ -62,9 +60,6 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
       setName("Guess");
     }
   };
-
-  
-
 
   return (
     <div className="game-area">
