@@ -1,9 +1,15 @@
 import "./GuessPannel.css";
 
-function GuessPannel({ handleGuess, handleNext, name, newArray }) {
+function GuessPannel({
+  handleGuess,
+  handleNext,
+  name,
+  newArray,
+  handleResults,
+}) {
   return (
     <div className=" guess-pannel">
-      {name === "Next" && (
+      {(name === "Next" || name === "Results") && (
         <div className="results">
           <p>
             Location: {newArray.name ? `${newArray.name}, ` : ""}
@@ -25,7 +31,15 @@ function GuessPannel({ handleGuess, handleNext, name, newArray }) {
 
       <button
         className="guess-btn"
-        onClick={name === "Guess" ? handleGuess : handleNext}
+        onClick={
+          name === "Guess"
+            ? handleGuess
+            : name === "Next"
+              ? handleNext
+              : name === "Results"
+                ? handleResults
+                : null
+        }
       >
         {name}
       </button>

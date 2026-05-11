@@ -3,22 +3,31 @@ import GuessPannel from "./GuessPannel.jsx";
 import Image from "./Images.jsx";
 import { pics } from "./ImageList.jsx";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function GameArea({ index, setIndex }) {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("Guess");
   const handleGuess = () => {
-    setName("Next");
+    if (index <= 3) {
+      setName("Next");
+    } else {
+      setName("Results");
+    }
   };
 
   const handleNext = () => {
     if (index <= 3) {
       if (index < myArray.length - 1) {
         setIndex(index + 1);
+        setName("Guess");
       }
-    } else {
-      alert("This is the end");
     }
-    setName("Guess");
+  };
+
+  const handleResults = () => {
+    navigate("/score");
   };
 
   const shuffleArray = (array) => {
@@ -45,6 +54,7 @@ function GameArea({ index, setIndex }) {
           <GuessPannel
             handleGuess={handleGuess}
             handleNext={handleNext}
+            handleResults={handleResults}
             name={name}
             newArray={myArray[index]}
           />
