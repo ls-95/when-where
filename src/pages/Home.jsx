@@ -6,7 +6,9 @@ import { useNavigate } from "react-router";
 function Home() {
   const navigate = useNavigate();
   const handleEmail = () => {
-    const promptInput = prompt(`What would you like to contact us about?`);
+    const promptInput = prompt(
+      `What would you like to contact us about?`,
+    ).trim();
     if (promptInput !== "") {
       alert(
         `Your email regarding "${promptInput}" will be handled by our customer service department that was last seen in the 1970s, so please allow extra time for them to return. 
