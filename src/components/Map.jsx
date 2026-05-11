@@ -20,7 +20,7 @@ function ClickHandler({setGuessPosition, isSubmittedGuess}){
 function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess}){
 
     const formatted = guessPosition ? `${guessPosition[0].toFixed(4)}, ${guessPosition[1].toFixed(4)}`: "";
-    const formattedAnswer = correctPosition ? `${correctPosition[0].toFixed(4)}, ${correctPosition[1].toFixed(4)}`: "";
+    const formattedAnswer = correctPosition ? `${correctPosition.lat.toFixed(4)}, ${correctPosition.lng.toFixed(4)}`: "";
 
     //zoom on result
     function ZoomToResult({ guessPosition, correctPosition, isSubmittedGuess }) {
@@ -35,7 +35,7 @@ function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess
     }
 
     return(
-        
+
         <div>
             <MapContainer
               center={[40, 0]} /*lat- long*/ 
@@ -56,13 +56,13 @@ function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess
                 )}    
 
                 {isSubmittedGuess && (
-                    <Marker position={correctPosition}>
+                    <Marker position={[correctPosition.lat, correctPosition.lng]}>
                        <Popup>Correct answer: {formattedAnswer}</Popup> 
                     </Marker>                                     // second pin
                 )}     
 
                 {isSubmittedGuess && guessPosition && (
-                   <Polyline positions={[guessPosition, correctPosition]} />//line
+                   <Polyline positions={[guessPosition, [correctPosition.lat, correctPosition.lng]]} />//line
                 )}  
                 
             </MapContainer>

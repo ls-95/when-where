@@ -8,10 +8,19 @@ import Map from "./Map.jsx";
 function GameArea({ index, setIndex }) {
   const [name, setName] = useState("Guess");
   const handleGuess = () => {
+    if(!guessPosition)return;
+
     setName("Next");
 
-    if(!guessPosition)return;
-    const distance = getDistance(guessPosition, correctPosition);
+    const guessLat = guessPosition[0];
+    const guessLng = guessPosition[1];
+
+    const correctLat = correctPosition.lat;
+    const correctLng = correctPosition.lng;
+
+   const distance = getDistance(guessLat, guessLng, correctLat, correctLng);
+
+ 
     setDistance(distance);
     setIsSubmittedGuess(true);
   };
@@ -48,9 +57,12 @@ function GameArea({ index, setIndex }) {
   const [isSubmittedGuess, setIsSubmittedGuess] = useState(false); 
   const [ distance,setDistance] = useState(null); 
 
-  const correctPosition = [48.8566, 2.3522];
+  const correctPosition = {
+    lat: parseFloat(myArray[index].lat),
+    lng: parseFloat(myArray[index].long),
+  };
 
-    //harvestine distance formula
+  //harvestine distance formula
 
     function getDistance(lat1, lng1, lat2, lng2){
 
