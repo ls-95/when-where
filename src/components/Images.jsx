@@ -6,7 +6,7 @@ function Image({ images, index }) {
     <>
       <TransformWrapper minScale={1} limitToBounds={true}>
         <TransformComponent>
-          <img src={images[index].image} alt="" />
+          <img className="game-img" src={images[index].image} alt="" />
         </TransformComponent>
       </TransformWrapper>
     </>
