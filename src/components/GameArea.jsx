@@ -7,24 +7,7 @@ import { useNavigate } from "react-router";
 
 function GameArea({ index, setIndex }) {
   const navigate = useNavigate();
-
   const [name, setName] = useState("Guess");
-  const handleGuess = () => {
-    if (index <= 3) {
-      setName("Next");
-    } else {
-      setName("Results");
-    }
-  };
-
-  const handleNext = () => {
-    if (index <= 3) {
-      if (index < myArray.length - 1) {
-        setIndex(index + 1);
-        setName("Guess");
-      }
-    }
-  };
 
   const handleResults = () => {
     navigate("/score");
