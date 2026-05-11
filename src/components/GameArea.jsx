@@ -3,6 +3,7 @@ import GuessPannel from "./GuessPannel.jsx";
 import Image from "./Images.jsx";
 import { pics } from "./ImageList.jsx";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function GameArea({ index, setIndex, totalScore, setTotalScore }) {
   const [name, setName] = useState("Guess");
@@ -10,6 +11,11 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
   const [guessedYear, setGuessedYear] = useState(1962);
   const [yearScore, setYearScore] = useState(0);
   const [locationScore, setLocationScore] = useState(0);
+  const navigate = useNavigate();
+
+  const handleResults = () => {
+    navigate("/score");
+  };
 
   const shuffleArray = (array) => {
     const shuffled = [...array];
@@ -74,6 +80,7 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
           <GuessPannel
             handleGuess={handleGuess}
             handleNext={handleNext}
+            handleResults={handleResults}
             name={name}
             newArray={myArray[index]}
             guessedYear={guessedYear}
