@@ -1,15 +1,21 @@
 import "./GuessPannel.css";
 
-function GuessPannel({
-  handleGuess,
-  handleNext,
-  name,
+function GuessPannel({ 
+  handleGuess, 
+  handleNext, 
+  name, 
   newArray,
-  handleResults,
+  guessedYear,
+  setGuessedYear,
+  yearScore,
+  locationScore,
+  totalScore,
 }) {
+
   return (
     <div className=" guess-pannel">
       {(name === "Next" || name === "Results") && (
+
         <div className="results">
           <p>
             Location: {newArray.name ? `${newArray.name}, ` : ""}
@@ -19,13 +25,23 @@ function GuessPannel({
           <p>Year: {newArray.year}</p>
         </div>
       )}
+
       <div className="container-top">
         <div className="pin-row">
           <p>Place the pin on the map</p>
         </div>
+
         <div className="year-row">
-          <label>Year</label>
-          <input type="range" />
+          <label htmlFor="year-slider">Year: {guessedYear}</label>
+          <input
+            id="year-slider"
+            type="range"
+            min="1900"
+            max="2025"
+            value={guessedYear}
+            disabled={name === "Next"}
+            onChange={(event) => setGuessedYear(Number(event.target.value))}
+          />
         </div>
       </div>
 
