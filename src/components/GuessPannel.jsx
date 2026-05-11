@@ -1,9 +1,10 @@
 import "./GuessPannel.css";
 
-function GuessPannel({ 
-  handleGuess, 
-  handleNext, 
-  name, 
+function GuessPannel({
+  handleGuess,
+  handleNext,
+  handleResults,
+  name,
   newArray,
   guessedYear,
   setGuessedYear,
@@ -11,11 +12,9 @@ function GuessPannel({
   locationScore,
   totalScore,
 }) {
-
   return (
     <div className=" guess-pannel">
       {(name === "Next" || name === "Results") && (
-
         <div className="results">
           <p>
             Location: {newArray.name ? `${newArray.name}, ` : ""}
