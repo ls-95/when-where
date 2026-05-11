@@ -107,6 +107,7 @@ function GameArea({ index, setIndex }) {
             name={name}
             newArray={myArray[index]}
             guessPosition={guessPosition}
+            distance={distance}
           />
         </div>
       </div>

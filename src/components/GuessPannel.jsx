@@ -1,6 +1,6 @@
 import "./GuessPannel.css";
 
-function GuessPannel({ handleGuess, handleNext, name, newArray }) {
+function GuessPannel({ handleGuess, handleNext, name, newArray, distance }) {
   return (
     <div className=" guess-pannel">
       {name === "Next" && (
@@ -11,6 +11,11 @@ function GuessPannel({ handleGuess, handleNext, name, newArray }) {
             {newArray.country}
           </p>
           <p>Year: {newArray.year}</p>
+
+          {distance && (
+            <p>You were {Math.round(distance)} km away</p>
+          )}
+
         </div>
       )}
       <div className="container-top">
