@@ -9,6 +9,11 @@ function GameArea({ index, setIndex }) {
   const [name, setName] = useState("Guess");
   const handleGuess = () => {
     setName("Next");
+
+    if(!guessPosition)return;
+    const distance = getDistance(guessPosition, correctPosition);
+    setDistance(distance);
+    setIsSubmittedGuess(true);
   };
 
   const handleNext = () => {
@@ -20,6 +25,11 @@ function GameArea({ index, setIndex }) {
       alert("This is the end");
     }
     setName("Guess");
+
+
+    setGuessPosition(null);
+    setIsSubmittedGuess(false);
+    setDistance(null);
   };
 
   const shuffleArray = (array) => {
@@ -38,16 +48,18 @@ function GameArea({ index, setIndex }) {
   const [isSubmittedGuess, setIsSubmittedGuess] = useState(false); 
   const [ distance,setDistance] = useState(null); 
 
-  //harvestine distance formula
+  const correctPosition = [48.8566, 2.3522];
 
-  function getDistance(lat1, lng1, lat2, lng2){
+    //harvestine distance formula
 
-    const R = 6371; // Earth radius in km
+    function getDistance(lat1, lng1, lat2, lng2){
 
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLng = (lng2 - lng1) * Math.PI / 180;
+      const R = 6371; 
 
-    const a =
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLng = (lng2 - lng1) * Math.PI / 180;
+
+      const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(lat1 * Math.PI / 180) *
       Math.cos(lat2 * Math.PI / 180) *
@@ -59,27 +71,6 @@ function GameArea({ index, setIndex }) {
 
     }
 
-    function handleGuess() {
-
-      if(!guessPosition)return;
-
-      const distance = getDistance(guessPosition, correctPosition);
-
-      setDistance(distance);
-
-      setIsSubmittedGuess(true);
-      console.log(distance);
-    }
-
-
-    function handleNext() {
-      setGuessPosition(null);
-
-      setIsSubmittedGuess(false);
-
-      setDistance(null);
-   
-    }
 
   return (
     <div className="game-area">
@@ -90,20 +81,20 @@ function GameArea({ index, setIndex }) {
       </div>
 
       <div className="container right-column">
-        <div className="map"> 
-          <Map guessPosition={guessPosition}
-                setGuessPosition={setGuessPosition} 
-                isSubmittedGuess={isSubmittedGuess} 
-                correctPosition={correctPosition}>
-          </Map>
+        <Map guessPosition={guessPosition}
+          setGuessPosition={setGuessPosition} 
+          isSubmittedGuess={isSubmittedGuess} 
+          correctPosition={correctPosition}>
+        </Map>
         
-        </div>
+      
         <div className="guess-panel">
           <GuessPannel
             handleGuess={handleGuess}
             handleNext={handleNext}
             name={name}
             newArray={myArray[index]}
+            guessPosition={guessPosition}
           />
         </div>
       </div>

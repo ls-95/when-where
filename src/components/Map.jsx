@@ -2,14 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet"
 import { useState } from "react";
 import { useMapEvents, useMap } from "react-leaflet";
 
-
-
-function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess}){
-
-    const formatted = guessPosition ? `${guessPosition[0].toFixed(4)}, ${guessPosition[1].toFixed(4)}`: "";
-    const formattedAnswer = correctPosition ? `${correctPosition[0].toFixed(4)}, ${correctPosition[1].toFixed(4)}`: "";
-
-    function ClickHandler({setGuessPosition, isSubmittedGuess}){
+function ClickHandler({setGuessPosition, isSubmittedGuess}){
     useMapEvents({
         click(e){
             if(isSubmittedGuess) return;
@@ -24,6 +17,11 @@ function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess
 }
 
 
+function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess}){
+
+    const formatted = guessPosition ? `${guessPosition[0].toFixed(4)}, ${guessPosition[1].toFixed(4)}`: "";
+    const formattedAnswer = correctPosition ? `${correctPosition[0].toFixed(4)}, ${correctPosition[1].toFixed(4)}`: "";
+
     //zoom on result
     function ZoomToResult({ guessPosition, correctPosition, isSubmittedGuess }) {
 
@@ -37,6 +35,7 @@ function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess
     }
 
     return(
+        
         <div>
             <MapContainer
               center={[40, 0]} /*lat- long*/ 
@@ -72,5 +71,5 @@ function Map({guessPosition, setGuessPosition, correctPosition, isSubmittedGuess
 
 
 }
+export default Map
 
-export default Map;
