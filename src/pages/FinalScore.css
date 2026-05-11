@@ -9,6 +9,7 @@
   color: white;
   font-family: monospace;
   font-size: 2em;
+  position: relative;
 }
 
 .final-score-main {
@@ -20,6 +21,19 @@
   max-width: 950px;
   width: 100%;
   margin: auto;
+}
+
+/*Final Score logo*/
+.final-score-logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.final-score-logo {
+  max-width: 200px;
+  width: 100%;
 }
 
 /*Final Score*/

@@ -1,6 +1,7 @@
 import WorldMap from "../assets/world-map.png";
 import "./FinalScore.css";
 import { useNavigate } from "react-router";
+import WhiteLogo from "../assets/when-where-logo-white.png";
 
 function FinalScore() {
   const navigate = useNavigate();
@@ -11,6 +12,9 @@ function FinalScore() {
         backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(${WorldMap})`,
       }}
     >
+      <div className="final-score-logo-container">
+        <img src={WhiteLogo} alt="" className="final-score-logo" />
+      </div>
       <div className="final-score-main">
         <div className="user-total-score-container">
           <p className="final-score-title bold">Final Score:</p>
