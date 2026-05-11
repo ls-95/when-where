@@ -1,12 +1,52 @@
 import WorldMap from "../assets/world-map.png";
+import "./FinalScore.css";
+import { useNavigate } from "react-router";
 
 function FinalScore() {
+  const navigate = useNavigate();
   return (
     <div
-      className="home-container"
-      style={{ backgroundImage: `url(${WorldMap})` }}
+      className="final-score-container"
+      style={{
+        backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(${WorldMap})`,
+      }}
     >
-      <h1>Hello</h1>
+      <div className="final-score-main">
+        <div className="user-total-score-container">
+          <p className="final-score-title bold">Final Score:</p>
+          <p>
+            <span className="user-total-score bold">1234</span>{" "}
+            <span className="game-total opacity">/ 2000</span>
+          </p>
+        </div>
+
+        <div className="year-distance-scores-container">
+          <div className="user-scores">
+            <p className="score-title bold">Distance:</p>
+            <p>
+              <span className="user-score bold">617</span>{" "}
+              <span className="total opacity">/ 1000</span>
+            </p>
+          </div>
+
+          <div className="user-scores">
+            <p className="score-title bold">Year:</p>
+            <p>
+              <span className="user-score bold">617</span>{" "}
+              <span className="total opacity">/ 1000</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="final-score-btn">
+          <button className="play-again-btn" onClick={() => navigate("/home")}>
+            Play Again
+          </button>
+          <button className="exit-game-btn" onClick={() => navigate("/login")}>
+            Exit Game
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
