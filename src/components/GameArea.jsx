@@ -32,11 +32,9 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
 
   const [myArray] = useState(() => shuffleArray(pics));
   
-  
-
   const [guessPosition, setGuessPosition]= useState(null);
   const [isSubmittedGuess, setIsSubmittedGuess] = useState(false); 
-  const [ distance,setDistance] = useState(null); 
+  const [distance, setDistance] = useState(null); 
 
   const correctPosition = {
     lat: parseFloat(myArray[index].lat),
@@ -44,7 +42,6 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
   };
 
   //harvestine distance formula
-
     function getDistance(lat1, lng1, lat2, lng2){
 
       const R = 6371; 
@@ -72,6 +69,11 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     return Math.max(0, 100 - yearDifference * 5);
   };
 
+  const calculateLocationScore = (distance) => {
+    return Math.round(Math.max(0, 100 - distance * 0.05));
+  };
+
+
   const handleGuess = () => {
     if (!guessPosition) return;
 
@@ -87,10 +89,11 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     setIsSubmittedGuess(true);
 
     const pointsFromYear = calculateYearScore();
+    const pointsFromLocation = calculateLocationScore(distance);
 
     setYearScore(pointsFromYear);
-    setLocationScore(0);
-    setTotalScore((previousScore) => previousScore + pointsFromYear);
+    setLocationScore(pointsFromLocation);
+    setTotalScore((previousScore) => previousScore + pointsFromYear + pointsFromLocation);
 
     if (index <= 3) {
       setName("Next");
