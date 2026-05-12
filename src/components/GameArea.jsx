@@ -5,14 +5,16 @@ import { pics } from "./ImageList.jsx";
 import { useState } from "react";
 import Map from "./Map.jsx";
 import { useNavigate } from "react-router";
+import { useGame } from "../context/GameContext";
 
-function GameArea({ index, setIndex, totalScore, setTotalScore }) {
+function GameArea({ index, setIndex }) {
   const [name, setName] = useState("Guess");
  
 
   const [guessedYear, setGuessedYear] = useState(1962);
-  const [yearScore, setYearScore] = useState(0);
-  const [locationScore, setLocationScore] = useState(0);
+  const { saveDistanceScore, saveYearScore } = useGame();
+  //const [yearScore, setYearScore] = useState(0);
+  //const [locationScore, setLocationScore] = useState(0);
   const navigate = useNavigate();
 
   const handleResults = () => {
@@ -91,9 +93,12 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     const pointsFromYear = calculateYearScore();
     const pointsFromLocation = calculateLocationScore(distance);
 
-    setYearScore(pointsFromYear);
-    setLocationScore(pointsFromLocation);
-    setTotalScore((previousScore) => previousScore + pointsFromYear + pointsFromLocation);
+
+    saveYearScore(pointsFromYear);
+    saveDistanceScore(pointsFromLocation);
+    //setYearScore(pointsFromYear);
+    //setLocationScore(pointsFromLocation);
+    //setTotalScore((previousScore) => previousScore + pointsFromYear + pointsFromLocation);
 
     if (index <= 3) {
       setName("Next");
@@ -106,8 +111,8 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     if (index < myArray.length - 1 && index < 4) {
       setIndex(index + 1);
       setGuessedYear(1962);
-      setYearScore(0);
-      setLocationScore(0);
+      //setYearScore(0);
+      //setLocationScore(0);
       setName("Guess");
     }
   
@@ -143,8 +148,8 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
             distance={distance}
             guessedYear={guessedYear}
             setGuessedYear={setGuessedYear}
-            yearScore={yearScore}
-            totalScore={totalScore}
+            //yearScore={yearScore}
+            //totalScore={totalScore}
           />
         </div>
       </div>

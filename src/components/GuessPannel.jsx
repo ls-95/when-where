@@ -8,9 +8,9 @@ function GuessPannel({
   newArray,
   guessedYear,
   setGuessedYear,
-  yearScore,
-  locationScore,
-  totalScore,
+  //yearScore,
+  //locationScore,
+  //totalScore,
   distance
 }) {
   return (

@@ -1,5 +1,10 @@
 import "./ScoreRoundBanner.css";
-function ScoreRoundBanner({ index, totalScore }) {
+import { useGame } from "../context/GameContext";
+
+function ScoreRoundBanner({ index }) {
+  const { distanceScore, yearScore } = useGame();
+  const totalScore = distanceScore + yearScore;
+
   return (
     <div className="score-round-banner">
       <div className="score-container">
