@@ -1,0 +1,16 @@
+.round-results {
+  font-family: var(--font-banner);
+  font-size: 1.2em;
+}
+
+.results > p {
+  padding-bottom: 10px;
+}
+
+.results > p > span {
+  font-weight: bold;
+}
+
+.calculation-text {
+  color: rgb(252, 222, 102);
+}
