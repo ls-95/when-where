@@ -1,20 +1,20 @@
-.layout{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-bg);
-    padding: 20px;
+.layout {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  padding: 20px;
+  min-height: 100vh;
 }
 
 .banner {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
-.gamearea{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin:20px;      
+.gamearea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
-

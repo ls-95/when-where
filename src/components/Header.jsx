@@ -1,15 +1,12 @@
-import "./Header.css"
-import Logo from "../assets/when-where-logo-white.png"
+import "./Header.css";
+import Logo from "../assets/when-where-logo-white.png";
 
-function Header(){
-    return(
-        <div className="header">
-            <div className="logo-container">
-                <div><img src={Logo} alt="logo white"className="logo" /></div>
-            </div>
-
-        </div>
-    );
+function Header() {
+  return (
+    <div className="logo-container">
+      <img src={Logo} alt="logo white" className="logo" />
+    </div>
+  );
 }
 
 export default Header;
