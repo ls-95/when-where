@@ -8,40 +8,8 @@ import { useNavigate } from "react-router";
 
 function GameArea({ index, setIndex, totalScore, setTotalScore }) {
   const [name, setName] = useState("Guess");
-  const handleGuess = () => {
-    if(!guessPosition)return;
-
-    setName("Next");
-
-    const guessLat = guessPosition[0];
-    const guessLng = guessPosition[1];
-
-    const correctLat = correctPosition.lat;
-    const correctLng = correctPosition.lng;
-
-   const distance = getDistance(guessLat, guessLng, correctLat, correctLng);
-
  
-    setDistance(distance);
-    setIsSubmittedGuess(true);
-  };
 
-  const handleNext = () => {
-    if (index <= 3) {
-      if (index < myArray.length - 1) {
-        setIndex(index + 1);
-      }
-    } else {
-      alert("This is the end");
-    }
-    setName("Guess");
-
-
-    setGuessPosition(null);
-    setIsSubmittedGuess(false);
-    setDistance(null);
-  }
-  
   const [guessedYear, setGuessedYear] = useState(1962);
   const [yearScore, setYearScore] = useState(0);
   const [locationScore, setLocationScore] = useState(0);
@@ -64,7 +32,7 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
 
   const [myArray] = useState(() => shuffleArray(pics));
   
-  // GUESS LOCATION
+  
 
   const [guessPosition, setGuessPosition]= useState(null);
   const [isSubmittedGuess, setIsSubmittedGuess] = useState(false); 
@@ -105,6 +73,19 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
   };
 
   const handleGuess = () => {
+    if (!guessPosition) return;
+
+    const guessLat = guessPosition[0];
+    const guessLng = guessPosition[1];
+
+    const correctLat = correctPosition.lat;
+    const correctLng = correctPosition.lng;
+
+    const distance = getDistance(guessLat, guessLng, correctLat, correctLng);
+
+    setDistance(distance);
+    setIsSubmittedGuess(true);
+
     const pointsFromYear = calculateYearScore();
 
     setYearScore(pointsFromYear);
@@ -126,8 +107,12 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
       setLocationScore(0);
       setName("Guess");
     }
+  
+    setGuessPosition(null);
+    setIsSubmittedGuess(false);
+    setDistance(null);
   };
-
+  
   return (
     <div className="game-area">
       <div className="container">
