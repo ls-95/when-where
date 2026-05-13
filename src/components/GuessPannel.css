@@ -145,3 +145,10 @@
 .results {
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .guess-panel {
+    font-size: 1em;
+    text-align: center;
+  }
+}

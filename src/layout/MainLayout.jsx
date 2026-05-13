@@ -1,17 +1,17 @@
 import "./MainLayout.css";
 import Header from "../components/Header.jsx";
 import ScoreRoundBanner from "../components/ScoreRoundBanner.jsx";
-import Footer from "../components/Footer.jsx";
+import RoundResults from "../components/RoundResults.jsx";
 
 function MainLayout({ children, index, totalScore }) {
   return (
     <div className="layout">
-      <Header />
       <div className="banner">
+        <Header />
+        <RoundResults index={index} />
         <ScoreRoundBanner index={index} totalScore={totalScore} />
       </div>
       <div className="gamearea">{children}</div>
-      <Footer />
     </div>
   );
 }
