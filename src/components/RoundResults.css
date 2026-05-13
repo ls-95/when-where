@@ -18,17 +18,12 @@
 
 @media (max-width: 1200px) {
   .round-results {
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 1000px) {
-  .round-results {
+    font-size: 1.25em;
     text-align: center;
   }
 
   .results > p {
-    padding-bottom: 2em;
+    padding: 2em 0;
   }
 }
 
@@ -36,10 +31,14 @@
   .round-results {
     margin-top: 2em;
   }
+
+  .results > p {
+    padding: 1em 0;
+  }
 }
 
 @media (max-width: 576px) {
   .results > p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }

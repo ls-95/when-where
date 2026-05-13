@@ -32,12 +32,12 @@
 @media (max-width: 1200px) {
   .score-txt,
   .round-txt {
-    font-size: 1em;
+    font-size: 1.25em;
   }
 
   .score,
   .round {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 }
 

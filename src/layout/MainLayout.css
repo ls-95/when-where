@@ -19,7 +19,7 @@
   margin: 20px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .banner {
     flex-direction: column;
     padding: 0 1em;
