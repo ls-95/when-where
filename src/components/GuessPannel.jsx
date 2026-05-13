@@ -1,19 +1,18 @@
 import "./GuessPannel.css";
+import { useGame } from "../context/GameContext";
 
 function GuessPannel({
   handleGuess,
   handleNext,
   handleResults,
-  name,
-  newArray,
   guessedYear,
   setGuessedYear,
   yearScore,
   locationScore,
   totalScore,
   distance,
-  yearDifference
 }) {
+  const { name } = useGame();
   return (
     <div className=" guess-pannel">
       {(name === "Next" || name === "Results") && (
