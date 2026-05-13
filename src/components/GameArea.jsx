@@ -1,7 +1,6 @@
 import "./GameArea.css";
 import GuessPannel from "./GuessPannel.jsx";
 import Image from "./Images.jsx";
-import { pics } from "./ImageList.jsx";
 import { useState } from "react";
 import Map from "./Map.jsx";
 import { useNavigate } from "react-router";

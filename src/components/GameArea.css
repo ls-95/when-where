@@ -36,16 +36,15 @@
   color: white;
 }
 
-.image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .guess-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .game-area {
+    grid-template-columns: 1fr;
+  }
 }
