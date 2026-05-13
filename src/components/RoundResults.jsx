@@ -3,9 +3,6 @@ import "./RoundResults.css";
 
 function RoundResults({ index }) {
   const { name, myArray, distance } = useGame();
-  console.log("name:", name);
-  console.log("distance:", distance);
-  console.log("myArray[index]:", myArray[index]);
   return (
     <div className="round-results">
       {(name === "Next" || name === "Results") && (
