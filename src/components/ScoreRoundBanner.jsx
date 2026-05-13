@@ -8,13 +8,13 @@ function ScoreRoundBanner({ index }) {
   return (
     <div className="score-round-banner">
       <div className="score-container">
-        <div className="score-txt"> SCORE </div>
-        <div className="score"> {totalScore}/1000 </div>
+        <p className="score-txt"> SCORE </p>
+        <p className="score"> {totalScore}/1000 </p>
       </div>
 
       <div className="round-container">
-        <div className="round-txt">ROUND</div>
-        <div className="round"> {index + 1}/5 </div>
+        <p className="round-txt">ROUND</p>
+        <p className="round"> {index + 1}/5 </p>
       </div>
     </div>
   );

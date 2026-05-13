@@ -1,15 +1,14 @@
 import "./GameArea.css";
 import GuessPannel from "./GuessPannel.jsx";
 import Image from "./Images.jsx";
-import { pics } from "./ImageList.jsx";
 import { useState } from "react";
 import Map from "./Map.jsx";
 import { useNavigate } from "react-router";
-import { useGame } from "../context/GameContext";
+import { useGame } from "../context/GameContext.jsx";
 
-function GameArea({ index, setIndex }) {
-  const [name, setName] = useState("Guess");
- 
+function GameArea({ index, setIndex, totalScore, setTotalScore }) {
+  const { setName, myArray, distance, setDistance, totalScore, setTotalScore } =
+    useGame();
 
   const [guessedYear, setGuessedYear] = useState(1962);
   const { saveDistanceScore, saveYearScore } = useGame();
@@ -21,22 +20,8 @@ function GameArea({ index, setIndex }) {
     navigate("/score");
   };
 
-  const shuffleArray = (array) => {
-    const shuffled = [...array];
-
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-
-    return shuffled;
-  };
-
-  const [myArray] = useState(() => shuffleArray(pics));
-  
-  const [guessPosition, setGuessPosition]= useState(null);
-  const [isSubmittedGuess, setIsSubmittedGuess] = useState(false); 
-  const [distance, setDistance] = useState(null); 
+  const [guessPosition, setGuessPosition] = useState(null);
+  const [isSubmittedGuess, setIsSubmittedGuess] = useState(false);
 
   const correctPosition = {
     lat: parseFloat(myArray[index].lat),
@@ -44,25 +29,24 @@ function GameArea({ index, setIndex }) {
   };
 
   //harvestine distance formula
-    function getDistance(lat1, lng1, lat2, lng2){
 
-      const R = 6371; 
+  function getDistance(lat1, lng1, lat2, lng2) {
+    const R = 6371;
 
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLng = (lng2 - lng1) * Math.PI / 180;
+    const dLat = ((lat2 - lat1) * Math.PI) / 180;
+    const dLng = ((lng2 - lng1) * Math.PI) / 180;
 
-      const a =
+    const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(lat1 * Math.PI / 180) *
-      Math.cos(lat2 * Math.PI / 180) *
-      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
 
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-      return R * c;
-
-    }
-
+    return R * c;
+  }
 
   const calculateYearScore = () => {
     const correctYear = Number(myArray[index].year);
@@ -85,9 +69,14 @@ function GameArea({ index, setIndex }) {
     const correctLat = correctPosition.lat;
     const correctLng = correctPosition.lng;
 
-    const distance = getDistance(guessLat, guessLng, correctLat, correctLng);
+    const calculatedDistance = getDistance(
+      guessLat,
+      guessLng,
+      correctLat,
+      correctLng,
+    );
 
-    setDistance(distance);
+    setDistance(calculatedDistance);
     setIsSubmittedGuess(true);
 
     const pointsFromYear = calculateYearScore();
@@ -115,12 +104,12 @@ function GameArea({ index, setIndex }) {
       //setLocationScore(0);
       setName("Guess");
     }
-  
+
     setGuessPosition(null);
     setIsSubmittedGuess(false);
     setDistance(null);
   };
-  
+
   return (
     <div className="game-area">
       <div className="container">
@@ -130,20 +119,18 @@ function GameArea({ index, setIndex }) {
       </div>
 
       <div className="container right-column">
-        <Map guessPosition={guessPosition}
-          setGuessPosition={setGuessPosition} 
-          isSubmittedGuess={isSubmittedGuess} 
-          correctPosition={correctPosition}>
-        </Map>
-        
-      
+        <Map
+          guessPosition={guessPosition}
+          setGuessPosition={setGuessPosition}
+          isSubmittedGuess={isSubmittedGuess}
+          correctPosition={correctPosition}
+        ></Map>
+
         <div className="guess-panel">
           <GuessPannel
             handleGuess={handleGuess}
             handleNext={handleNext}
             handleResults={handleResults}
-            name={name}
-            newArray={myArray[index]}
             guessPosition={guessPosition}
             distance={distance}
             guessedYear={guessedYear}
