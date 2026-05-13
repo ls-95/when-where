@@ -7,7 +7,8 @@ import { useNavigate } from "react-router";
 import { useGame } from "../context/GameContext.jsx";
 
 function GameArea({ index, setIndex, totalScore, setTotalScore }) {
-  const { setName, myArray, distance, setDistance } = useGame();
+  const { setName, myArray, distance, setDistance, totalScore, setTotalScore } =
+    useGame();
 
   const [guessedYear, setGuessedYear] = useState(1962);
   const [yearScore, setYearScore] = useState(0);
