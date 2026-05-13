@@ -13,13 +13,16 @@ function RoundResults({ index }) {
             {myArray[index].address ? `${myArray[index].address},` : ""}{" "}
             {myArray[index].city}, {myArray[index].country}{" "}
             {distance && (
-              <p className="calculation-text">
+              <span className="calculation-text">
                 (You were {Math.round(distance)} km away)
-              </p>
+              </span>
             )}
           </p>
           <p>
-            <span>Year</span>: {myArray[index].year}
+            <span>Year</span>: {myArray[index].year}{" "}
+            <span className="calculation-text">
+              (You were "year" years off)
+            </span>
           </p>
         </div>
       )}

@@ -1,6 +1,7 @@
 .round-results {
   font-family: var(--font-banner);
   font-size: 1.2em;
+  padding: 0 1em;
 }
 
 .results > p {
@@ -13,4 +14,32 @@
 
 .calculation-text {
   color: rgb(252, 222, 102);
+}
+
+@media (max-width: 1200px) {
+  .round-results {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 1000px) {
+  .round-results {
+    text-align: center;
+  }
+
+  .results > p {
+    padding-bottom: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .round-results {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 576px) {
+  .results > p {
+    font-size: 0.9em;
+  }
 }
