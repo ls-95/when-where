@@ -8,18 +8,11 @@ function Image({ images, index }) {
     ? `${currentImage.name} in ${currentImage.city}, ${currentImage.country}, ${currentImage.year}`
     : `${currentImage.address} in ${currentImage.city}, ${currentImage.country}, ${currentImage.year}`;
 
-    console.log("Current image:", currentImage);
-    console.log("Alt text:", altText);
-
   return (
     <>
       <TransformWrapper minScale={1} limitToBounds={true}>
         <TransformComponent>
-          <img 
-            className="game-img" 
-            src={images[index].image} 
-            alt={altText} 
-          />
+          <img className="game-img" src={images[index].image} alt={altText} />
         </TransformComponent>
       </TransformWrapper>
     </>
