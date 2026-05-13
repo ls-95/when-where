@@ -11,9 +11,7 @@ function GameArea({ index, setIndex  }) {
     useGame();
 
   const [guessedYear, setGuessedYear] = useState(1962);
-  const [yearScore, setYearScore] = useState(0);
-  const [locationScore, setLocationScore] = useState(0);
-  const [yearDifference, setYearDifference] = useState(null);
+  const { saveDistanceScore, saveYearScore } = useGame();
   const navigate = useNavigate();
 
   const handleResults = () => {
@@ -55,6 +53,11 @@ function GameArea({ index, setIndex  }) {
     return Math.max(0, 100 - yearDifference * 5);
   };
 
+  const calculateLocationScore = (distance) => {
+    return Math.round(Math.max(0, 100 - distance * 0.05));
+  };
+
+
   const handleGuess = () => {
     if (!guessPosition) return;
 
@@ -79,10 +82,14 @@ function GameArea({ index, setIndex  }) {
     setYearDifference(differenceFromYear);
 
     const pointsFromYear = calculateYearScore();
+    const pointsFromLocation = calculateLocationScore(distance);
 
-    setYearScore(pointsFromYear);
-    setLocationScore(0);
-    setTotalScore((previousScore) => previousScore + pointsFromYear);
+
+    saveYearScore(pointsFromYear);
+    saveDistanceScore(pointsFromLocation);
+    //setYearScore(pointsFromYear);
+    //setLocationScore(pointsFromLocation);
+    //setTotalScore((previousScore) => previousScore + pointsFromYear + pointsFromLocation);
 
     if (index <= 3) {
       setName("Next");
@@ -95,9 +102,6 @@ function GameArea({ index, setIndex  }) {
     if (index < myArray.length - 1 && index < 4) {
       setIndex(index + 1);
       setGuessedYear(1962);
-      setYearScore(0);
-      setLocationScore(0);
-      setYearDifference(null);
       setName("Guess");
     }
 
@@ -131,9 +135,6 @@ function GameArea({ index, setIndex  }) {
             distance={distance}
             guessedYear={guessedYear}
             setGuessedYear={setGuessedYear}
-            yearScore={yearScore}
-            totalScore={totalScore}
-            yearDifference={yearDifference}
           />
         </div>
       </div>

@@ -2,9 +2,13 @@ import WorldMap from "../assets/world-map.png";
 import "./FinalScore.css";
 import { useNavigate } from "react-router";
 import WhiteLogo from "../assets/when-where-logo-white.png";
+import { useGame } from "../context/GameContext";
 
 function FinalScore() {
   const navigate = useNavigate();
+  const { distanceScore, yearScore } = useGame();
+  const totalScore= distanceScore + yearScore;
+
   return (
     <div
       className="final-score-container"
@@ -19,8 +23,8 @@ function FinalScore() {
         <div className="user-total-score-container">
           <p className="final-score-title bold">Final Score:</p>
           <p>
-            <span className="user-total-score bold">1234</span>{" "}
-            <span className="game-total opacity">/ 1000</span>
+            <span className="user-total-score bold">{totalScore}</span>{" "}
+            <span className="game-total opacity">/ 2000</span>
           </p>
         </div>
 
@@ -28,7 +32,7 @@ function FinalScore() {
           <div className="user-scores">
             <p className="score-title bold">Distance:</p>
             <p>
-              <span className="user-score bold">617</span>{" "}
+              <span className="user-score bold">{distanceScore}</span>{" "} 
               <span className="total opacity">/ 1000</span>
             </p>
           </div>
@@ -36,7 +40,7 @@ function FinalScore() {
           <div className="user-scores">
             <p className="score-title bold">Year:</p>
             <p>
-              <span className="user-score bold">617</span>{" "}
+              <span className="user-score bold">{yearScore}</span>{" "}
               <span className="total opacity">/ 1000</span>
             </p>
           </div>
