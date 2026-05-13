@@ -6,14 +6,12 @@ import Map from "./Map.jsx";
 import { useNavigate } from "react-router";
 import { useGame } from "../context/GameContext.jsx";
 
-function GameArea({ index, setIndex, totalScore, setTotalScore }) {
+function GameArea({ index, setIndex  }) {
   const { setName, myArray, distance, setDistance, totalScore, setTotalScore } =
     useGame();
 
   const [guessedYear, setGuessedYear] = useState(1962);
   const { saveDistanceScore, saveYearScore } = useGame();
-  //const [yearScore, setYearScore] = useState(0);
-  //const [locationScore, setLocationScore] = useState(0);
   const navigate = useNavigate();
 
   const handleResults = () => {
@@ -79,6 +77,10 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     setDistance(calculatedDistance);
     setIsSubmittedGuess(true);
 
+    const correctYear = Number(myArray[index].year);
+    const differenceFromYear = Math.abs(correctYear - guessedYear);
+    setYearDifference(differenceFromYear);
+
     const pointsFromYear = calculateYearScore();
     const pointsFromLocation = calculateLocationScore(distance);
 
@@ -100,8 +102,6 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     if (index < myArray.length - 1 && index < 4) {
       setIndex(index + 1);
       setGuessedYear(1962);
-      //setYearScore(0);
-      //setLocationScore(0);
       setName("Guess");
     }
 
@@ -135,8 +135,6 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
             distance={distance}
             guessedYear={guessedYear}
             setGuessedYear={setGuessedYear}
-            //yearScore={yearScore}
-            //totalScore={totalScore}
           />
         </div>
       </div>

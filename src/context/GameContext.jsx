@@ -16,6 +16,7 @@ export function GameProvider({ children }) {
   const [distanceScore, setDistanceScore] = useState(0);
   const [yearScore, setYearScore] = useState(0);
   const [name, setName] = useState("Guess");
+  const [yearDifference, setYearDifference] = useState(null);
   const [myArray, setMyArray] = useState(() => shuffleArray(pics));
   const [distance, setDistance] = useState(null);
 
@@ -44,6 +45,8 @@ export function GameProvider({ children }) {
         saveYearScore,
         name,
         setName,
+        yearDifference,
+        setYearDifference,
         myArray,
         distance,
         setDistance,
