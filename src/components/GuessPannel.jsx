@@ -11,7 +11,8 @@ function GuessPannel({
   yearScore,
   locationScore,
   totalScore,
-  distance
+  distance,
+  yearDifference
 }) {
   return (
     <div className=" guess-pannel">
@@ -23,6 +24,7 @@ function GuessPannel({
             {newArray.country}
           </p>
           <p>Year: {newArray.year}</p>
+
 
           {distance && (
             <p>You were {Math.round(distance)} km away</p>

@@ -6,6 +6,7 @@ export function GameProvider({ children }) {
   const [distanceScore, setDistanceScore] = useState(0);
   const [yearScore, setYearScore] = useState(0);
   const [name, setName] = useState("Guess");
+  const [yearDifference, setYearDifference] = useState(null);
 
   function saveDistanceScore(scoreData) {
     setDistanceScore((prev) => prev + scoreData);
@@ -25,6 +26,8 @@ export function GameProvider({ children }) {
         saveYearScore,
         name,
         setName,
+        yearDifference,
+        setYearDifference,
       }}
     >
       {children}

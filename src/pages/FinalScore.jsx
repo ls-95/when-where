@@ -20,7 +20,7 @@ function FinalScore() {
           <p className="final-score-title bold">Final Score:</p>
           <p>
             <span className="user-total-score bold">1234</span>{" "}
-            <span className="game-total opacity">/ 2000</span>
+            <span className="game-total opacity">/ 1000</span>
           </p>
         </div>
 
