@@ -54,6 +54,11 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     return Math.max(0, 100 - yearDifference * 5);
   };
 
+  const calculateLocationScore = (distance) => {
+    return Math.round(Math.max(0, 100 - distance * 0.05));
+  };
+
+
   const handleGuess = () => {
     if (!guessPosition) return;
 
@@ -74,10 +79,11 @@ function GameArea({ index, setIndex, totalScore, setTotalScore }) {
     setIsSubmittedGuess(true);
 
     const pointsFromYear = calculateYearScore();
+    const pointsFromLocation = calculateLocationScore(distance);
 
     setYearScore(pointsFromYear);
-    setLocationScore(0);
-    setTotalScore((previousScore) => previousScore + pointsFromYear);
+    setLocationScore(pointsFromLocation);
+    setTotalScore((previousScore) => previousScore + pointsFromYear + pointsFromLocation);
 
     if (index <= 3) {
       setName("Next");
