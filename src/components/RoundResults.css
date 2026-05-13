@@ -23,16 +23,6 @@
   }
 
   .results > p {
-    padding: 2em 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .round-results {
-    margin-top: 2em;
-  }
-
-  .results > p {
     padding: 1em 0;
   }
 }

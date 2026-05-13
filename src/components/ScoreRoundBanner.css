@@ -32,12 +32,12 @@
 @media (max-width: 1200px) {
   .score-txt,
   .round-txt {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 
   .score,
   .round {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 
@@ -45,5 +45,22 @@
   .score-container,
   .round-container {
     padding-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .score-container,
+  .round-container {
+    padding-top: 1.1em;
+  }
+
+  .score-txt,
+  .round-txt {
+    font-size: 1em;
+  }
+
+  .score,
+  .round {
+    font-size: 1.5em;
   }
 }
