@@ -6,9 +6,16 @@ import Map from "./Map.jsx";
 import { useNavigate } from "react-router";
 import { useGame } from "../context/GameContext.jsx";
 
-function GameArea({ index, setIndex  }) {
-  const { setName, myArray, distance, setDistance, totalScore, setTotalScore } =
-    useGame();
+function GameArea({ index, setIndex }) {
+  const {
+    setName,
+    myArray,
+    distance,
+    setDistance,
+    totalScore,
+    setTotalScore,
+    setYearDifference,
+  } = useGame();
 
   const [guessedYear, setGuessedYear] = useState(1962);
   const { saveDistanceScore, saveYearScore } = useGame();
@@ -57,7 +64,6 @@ function GameArea({ index, setIndex  }) {
     return Math.round(Math.max(0, 100 - distance * 0.05));
   };
 
-
   const handleGuess = () => {
     if (!guessPosition) return;
 
@@ -83,7 +89,6 @@ function GameArea({ index, setIndex  }) {
 
     const pointsFromYear = calculateYearScore();
     const pointsFromLocation = calculateLocationScore(distance);
-
 
     saveYearScore(pointsFromYear);
     saveDistanceScore(pointsFromLocation);
