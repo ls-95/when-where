@@ -12,13 +12,12 @@ function GameArea({ index, setIndex }) {
     myArray,
     distance,
     setDistance,
-    totalScore,
-    setTotalScore,
     setYearDifference,
+    saveDistanceScore,
+    saveYearScore,
   } = useGame();
 
   const [guessedYear, setGuessedYear] = useState(1962);
-  const { saveDistanceScore, saveYearScore } = useGame();
   const navigate = useNavigate();
 
   const handleResults = () => {
@@ -88,7 +87,7 @@ function GameArea({ index, setIndex }) {
     setYearDifference(differenceFromYear);
 
     const pointsFromYear = calculateYearScore();
-    const pointsFromLocation = calculateLocationScore(distance);
+    const pointsFromLocation = calculateLocationScore(calculatedDistance);
 
     saveYearScore(pointsFromYear);
     saveDistanceScore(pointsFromLocation);

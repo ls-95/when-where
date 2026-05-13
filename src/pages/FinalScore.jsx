@@ -7,7 +7,7 @@ import { useGame } from "../context/GameContext";
 function FinalScore() {
   const navigate = useNavigate();
   const { distanceScore, yearScore } = useGame();
-  const totalScore= distanceScore + yearScore;
+  const totalScore = distanceScore + yearScore;
 
   return (
     <div
@@ -24,7 +24,7 @@ function FinalScore() {
           <p className="final-score-title bold">Final Score:</p>
           <p>
             <span className="user-total-score bold">{totalScore}</span>{" "}
-            <span className="game-total opacity">/ 2000</span>
+            <span className="game-total opacity">/ 1000</span>
           </p>
         </div>
 
@@ -32,8 +32,8 @@ function FinalScore() {
           <div className="user-scores">
             <p className="score-title bold">Distance:</p>
             <p>
-              <span className="user-score bold">{distanceScore}</span>{" "} 
-              <span className="total opacity">/ 1000</span>
+              <span className="user-score bold">{distanceScore}</span>{" "}
+              <span className="total opacity">/ 500</span>
             </p>
           </div>
 
@@ -41,7 +41,7 @@ function FinalScore() {
             <p className="score-title bold">Year:</p>
             <p>
               <span className="user-score bold">{yearScore}</span>{" "}
-              <span className="total opacity">/ 1000</span>
+              <span className="total opacity">/ 500</span>
             </p>
           </div>
         </div>

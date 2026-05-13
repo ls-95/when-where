@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { pics } from "../components/ImageList";
 
 const GameContext = createContext(null);
@@ -19,12 +19,18 @@ export function GameProvider({ children }) {
   const [yearDifference, setYearDifference] = useState(null);
   const [myArray, setMyArray] = useState(() => shuffleArray(pics));
   const [distance, setDistance] = useState(null);
+  const [totalScore, setTotalScore] = useState(0);
+
+  useEffect(() => {
+    setTotalScore(distanceScore + yearScore);
+  }, [distanceScore, yearScore]);
 
   function resetGame() {
     setDistance(0);
     setName("Guess");
     setMyArray(shuffleArray(pics));
     setDistance(null);
+    setTotalScore(0);
   }
 
   function saveDistanceScore(scoreData) {
@@ -51,6 +57,7 @@ export function GameProvider({ children }) {
         distance,
         setDistance,
         resetGame,
+        totalScore,
       }}
     >
       {children}
