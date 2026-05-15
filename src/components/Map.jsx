@@ -48,12 +48,12 @@ function Map({
     <div>
       <MapContainer
         center={[40, 0]} /*lat- long*/
-        zoom={1}
+        zoom={3}
         style={{ height: "100%", width: "100%" }}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap"
+          url={`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Wy3Gt7OuVVmIgLAbjFMF`}
+          attribution="&copy; MapTiler & OpenStreetMap contributors"
         />
         <ClickHandler
           setGuessPosition={setGuessPosition}
