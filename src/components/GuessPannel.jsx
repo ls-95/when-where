@@ -7,10 +7,6 @@ function GuessPannel({
   handleResults,
   guessedYear,
   setGuessedYear,
-  //yearScore,
-  //locationScore,
-  //totalScore,
-  distance,
 }) {
   const { name } = useGame();
   return (

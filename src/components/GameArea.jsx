@@ -91,9 +91,6 @@ function GameArea({ index, setIndex }) {
 
     saveYearScore(pointsFromYear);
     saveDistanceScore(pointsFromLocation);
-    //setYearScore(pointsFromYear);
-    //setLocationScore(pointsFromLocation);
-    //setTotalScore((previousScore) => previousScore + pointsFromYear + pointsFromLocation);
 
     if (index <= 3) {
       setName("Next");
