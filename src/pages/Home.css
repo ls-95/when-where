@@ -8,6 +8,32 @@
   flex-direction: column;
 }
 
+/*How to play button*/
+.how-to-play-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+}
+
+.how-to-play-container > button {
+  font-family: Arial, sans-serif;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.how-to-play-container > button:hover {
+  color: #fef07a;
+}
+
+.how-to-play-container > button:active {
+  position: relative;
+  top: 2px;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -147,6 +173,10 @@
   .home-container {
     font-size: 14px;
     padding: 2em;
+  }
+
+  .how-to-play-container {
+    justify-content: center;
   }
 
   .btn-container,
