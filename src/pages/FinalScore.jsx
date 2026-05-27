@@ -17,7 +17,11 @@ function FinalScore() {
       }}
     >
       <div className="final-score-logo-container">
-        <img src={WhiteLogo} alt="" className="final-score-logo" />
+        <img
+          src={WhiteLogo}
+          alt="When & Where logo"
+          className="final-score-logo"
+        />
       </div>
       <div className="final-score-main">
         <div className="user-total-score-container">

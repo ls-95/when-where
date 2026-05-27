@@ -1,4 +1,3 @@
-import "./GameScreen.css";
 import MainLayout from "../layout/MainLayout.jsx";
 import GameArea from "../components/GameArea.jsx";
 import { useState } from "react";
@@ -10,11 +9,11 @@ function GameScreen() {
   return (
     <div>
       <MainLayout index={index} totalScore={totalScore}>
-        <GameArea 
-        index={index} 
-        setIndex={setIndex}
-        totalScore={totalScore}
-        setTotalScore={setTotalScore}
+        <GameArea
+          index={index}
+          setIndex={setIndex}
+          totalScore={totalScore}
+          setTotalScore={setTotalScore}
         />
       </MainLayout>
     </div>

@@ -26,11 +26,12 @@ export function GameProvider({ children }) {
   }, [distanceScore, yearScore]);
 
   function resetGame() {
-    setDistance(0);
     setName("Guess");
     setMyArray(shuffleArray(pics));
     setDistance(null);
     setTotalScore(0);
+    setDistanceScore(0);
+    setYearScore(0);
   }
 
   function saveDistanceScore(scoreData) {

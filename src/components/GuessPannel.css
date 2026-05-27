@@ -38,18 +38,6 @@
   transition: all 0.15s ease;
 }
 
-.pin-row:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 4px 0px #7f8db0,
-    0 0 10px rgba(180, 200, 255, 0.4);
-}
-
-.pin-row:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0px #6c7896;
-}
-
 .year-row {
   display: flex;
   flex-direction: column;
