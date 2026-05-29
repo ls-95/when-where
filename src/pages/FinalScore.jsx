@@ -1,7 +1,7 @@
-import WorldMap from "../assets/world-map.png";
+import WorldMap from "../assets/world-map.webp";
 import "./FinalScore.css";
 import { useNavigate } from "react-router";
-import WhiteLogo from "../assets/when-where-logo-white.png";
+import WhiteLogo from "../assets/when-where-logo-white.webp";
 import { useGame } from "../context/GameContext";
 
 function FinalScore() {

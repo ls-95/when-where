@@ -1,6 +1,6 @@
 import "./Header.css";
 import { useNavigate } from "react-router";
-import Logo from "../assets/when-where-logo-white.png";
+import Logo from "../assets/when-where-logo-white.webp";
 
 function Header() {
   const navigate = useNavigate();

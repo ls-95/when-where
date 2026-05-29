@@ -1,6 +1,6 @@
 import "./Home.css";
-import Logo from "../assets/when-where-logo.png";
-import Background from "../assets/when-where-background-2.png";
+import Logo from "../assets/when-where-logo.webp";
+import Background from "../assets/when-where-background-2.webp";
 import { useNavigate } from "react-router";
 import { useGame } from "../context/GameContext";
 import { useState } from "react";
