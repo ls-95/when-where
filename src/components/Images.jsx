@@ -12,7 +12,12 @@ function Image({ images, index }) {
     <>
       <TransformWrapper minScale={1} limitToBounds={true}>
         <TransformComponent>
-          <img className="game-img" src={images[index].image} alt={altText} />
+          <img
+            className="game-img"
+            src={images[index].image}
+            fetchpriority="high"
+            alt={altText}
+          />
         </TransformComponent>
       </TransformWrapper>
     </>
