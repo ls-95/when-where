@@ -15,7 +15,7 @@ function App() {
         fallback={
           <div className="loading">
             <p>
-              <span class="loader"></span> Loading...
+              <span className="loader"></span> Loading...
             </p>
           </div>
         }
