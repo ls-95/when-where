@@ -67,9 +67,9 @@ function Home() {
           </button>
         </div>
         <div className="footer-names">
-          <p>Fulvia Franco</p>
-          <p>Jakob Körling</p>
-          <p>Laetitia Saunders</p>
+          <p>F.Franco</p>
+          <p>J.Körling</p>
+          <p>L.Saunders</p>
         </div>
         <div className="footer-btn-container">
           <button onClick={() => handleClick("Terms of Use")}>

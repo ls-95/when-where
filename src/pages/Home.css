@@ -180,6 +180,25 @@
   top: 2px;
 }
 
+@media (max-width: 928px) {
+  .footer-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-btn-container > button {
+    margin-bottom: 10px;
+  }
+
+  .email-container,
+  .footer-names,
+  .footer-btn-container {
+    display: flex;
+    align-items: center;
+  }
+}
+
 @media (max-width: 768px) {
   .home-container {
     font-size: 14px;
@@ -188,6 +207,10 @@
 
   .how-to-play-container {
     justify-content: center;
+  }
+
+  .footer-names {
+    margin: 1em auto 0 auto;
   }
 
   .btn-container,
@@ -208,6 +231,7 @@
 
   .footer-btn-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 }
