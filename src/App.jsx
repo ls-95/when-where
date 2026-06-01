@@ -11,7 +11,15 @@ const FinalScore = lazy(() => import("./pages/FinalScore"));
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="loading">
+            <p>
+              <span class="loader"></span> Loading...
+            </p>
+          </div>
+        }
+      >
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LoginPage />} />
