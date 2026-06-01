@@ -66,6 +66,11 @@ function Home() {
             thisisnotarealemail@when&where.com
           </button>
         </div>
+        <div className="footer-names">
+          <p>Fulvia Franco</p>
+          <p>Jakob Körling</p>
+          <p>Laetitia Saunders</p>
+        </div>
         <div className="footer-btn-container">
           <button onClick={() => handleClick("Terms of Use")}>
             Terms of Use
